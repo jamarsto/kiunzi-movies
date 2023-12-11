@@ -1,0 +1,52 @@
+# Build time configuration & dev services configuration
+quarkus:
+  container-image:
+    group: jasonmarstoncouk
+    name: movies
+    registry: registry.hub.docker.com
+    username: jasonmarstoncouk
+    password: ${DOCKER_HUB_TOKEN}
+    push: true
+  kubernetes:
+    name: movies
+  jib:
+    base-jvm-image: eclipse-temurin:20-jdk-alpine
+    base-registry-username: jasonmarstoncouk
+    base-registry-password: ${DOCKER_HUB_TOKEN}
+
+# development profile configuration
+"%dev":
+  mp:
+    jwt:
+      verify:
+        publickey:
+          location: publicKey.pem
+        issuer: https://example.com/issuer
+  quarkus:
+    datasource:
+      db-kind: mysql
+    hibernate-orm:
+      database:
+        generation: drop-and-create
+    http:
+      port: 8080
+    smallrye-jwt:
+      enabled: true
+
+# production profile configuration
+"%prod":
+  mp:
+    jwt:
+      verify:
+        publickey:
+          location: publicKey.pem 
+        issuer: https://example.com/issuer
+  quarkus:
+    datasource:
+      db-kind: mysql
+      username: quarkus
+      password: ${DATABASE_PASSWORD}
+      reactive:
+        url: vertx-reactive:mysql://localhost:3306/quarkus
+    http:
+      port: 8080
