@@ -10,7 +10,7 @@ repositories {
 }
 
 archivesBaseName = 'movies-framework-input'
-group = 'uk.me.jasonmarston.kiunzi'
+group = 'uk.co.jasonmarston.kiunzi'
 version = 'latest'
 
 dependencies {
