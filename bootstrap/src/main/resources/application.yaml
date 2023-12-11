@@ -3,10 +3,11 @@ quarkus:
   container-image:
     group: jasonmarstoncouk
     name: movies
-    registry: registry.hub.docker.com
-    username: jasonmarstoncouk
     password: ${DOCKER_HUB_TOKEN}
     push: true
+    registry: registry.hub.docker.com
+    tag: latest
+    username: jasonmarstoncouk
   kubernetes:
     name: movies
   jib:
