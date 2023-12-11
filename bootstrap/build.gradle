@@ -8,7 +8,7 @@ repositories {
 }
 
 archivesBaseName = 'movies'
-group = 'uk.me.jasonmarston.app'
+group = 'uk.me.jasonmarston.kiunzi'
 version = 'latest'
 
 dependencies {

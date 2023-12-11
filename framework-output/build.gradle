@@ -9,8 +9,8 @@ repositories {
     mavenCentral()
 }
 
-archivesBaseName = 'framework-output'
-group = 'uk.me.jasonmarston.app'
+archivesBaseName = 'movies-framework-output'
+group = 'uk.me.jasonmarston.kiunzi'
 version = 'latest'
 
 dependencies {
