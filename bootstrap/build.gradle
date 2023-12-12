@@ -9,7 +9,6 @@ publishing {
     publications {
         maven(MavenPublication) {
             artifactId = 'movies'
-            version = '0.0.1-SNAPSHOT'
         }
     }
     repositories {
@@ -27,8 +26,17 @@ publishing {
 archivesBaseName = 'movies'
 group = 'uk.co.jasonmarston.kiunzi'
 version = '0.0.1-SNAPSHOT'
-//ext.tag = "${version}"
-ext.tag = 'latest'
+ext {
+    docker_group = 'jasonmarstoncouk'
+    docker_name = 'movies'
+    docker_push = true
+    docker_registry = 'registry.hub.docker.com'
+    docker_tag = 'latest'
+    docker_username = 'jasonmarstoncouk'
+    jib_base_jvm_image = 'eclipse-temurin:20-jdk-alpine'
+    jib_base_registry_username = 'jasonmarstoncouk'
+    kubernetes_name = 'movies'
+}
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
