@@ -23,7 +23,7 @@ quarkus:
     jwt:
       verify:
         publickey:
-          location: publicKey.pem
+          location: http://localhost:8082/service-api/pem
         issuer: ${TOKEN_ISSUER}
   quarkus:
     datasource:
