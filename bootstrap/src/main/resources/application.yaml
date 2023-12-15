@@ -22,7 +22,7 @@ quarkus:
   smallrye:
     jwt:
       verify:
-        publickey:
+        key:
           location: http://localhost:8082/service-api/pem
         issuer: ${TOKEN_ISSUER}
   quarkus:
@@ -39,7 +39,7 @@ quarkus:
   smallrye:
     jwt:
       verify:
-        publickey:
+        key:
           location: http://key/service-api/pem
         issuer: ${token-issuer}
   quarkus:
