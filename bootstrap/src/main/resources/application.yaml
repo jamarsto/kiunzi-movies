@@ -19,7 +19,7 @@ quarkus:
 
 # development profile configuration
 "%dev":
-  mp:
+  smallrye:
     jwt:
       verify:
         publickey:
@@ -36,7 +36,7 @@ quarkus:
 
 # production profile configuration
 "%prod":
-  mp:
+  smallrye:
     jwt:
       verify:
         publickey:
