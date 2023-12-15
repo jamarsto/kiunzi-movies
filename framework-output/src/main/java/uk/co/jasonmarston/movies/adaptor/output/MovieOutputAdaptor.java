@@ -20,8 +20,7 @@ public class MovieOutputAdaptor implements MovieOutputPort {
 		return 	movieRepository
 			.createMovie(MovieData.buildMovieDataFrom(movie))
 			.onItem()
-			.transform(movieData -> MovieData
-				.buildMovieFrom(movieData)
+			.transform(MovieData::buildMovieFrom
 			);
 	}
 
@@ -30,8 +29,7 @@ public class MovieOutputAdaptor implements MovieOutputPort {
 		return movieRepository
 			.readMovie(id)
 			.onItem()
-			.transform(movie -> MovieData
-				.buildMovieFrom(movie)
+			.transform(MovieData::buildMovieFrom
 			);
 	}
 
@@ -40,8 +38,7 @@ public class MovieOutputAdaptor implements MovieOutputPort {
 		return movieRepository
 			.updateMovie(MovieData.buildMovieDataFrom(movie))
 			.onItem()
-			.transform(movieData -> MovieData
-				.buildMovieFrom(movieData)
+			.transform(MovieData::buildMovieFrom
 			);
 	}
 

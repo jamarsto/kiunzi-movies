@@ -56,6 +56,7 @@ dependencies {
     implementation 'io.quarkus:quarkus-reactive-db2-client'
     implementation 'io.quarkus:quarkus-reactive-pg-client'
     implementation 'io.quarkus:quarkus-kubernetes'
+    implementation 'io.quarkus:quarkus-kubernetes-config'
     implementation 'io.quarkus:quarkus-container-image-jib'
 
     testImplementation 'io.quarkus:quarkus-junit5'

@@ -10,31 +10,8 @@ quarkus:
     username: ${docker_username}
   kubernetes:
     deploy: ${kubernetes_deploy}
-    env:
-      mapping:
-        database-kind:
-          from-secret: kiunzi-secrets
-          with-key: database-kind
-        database-username:
-          from-secret: kiunzi-secrets
-          with-key: database-username
-        database-password:
-          from-secret: kiunzi-secrets
-          with-key: database-password
-        database-url:
-          from-secret: kiunzi-secrets
-          with-key: database-url
-        token-issuer:
-          from-secret: kiunzi-secrets
-          with-key: token-issuer
-    mounts:
-      public-key-volume:
-        path: /keyfiles
     name: ${kubernetes_name}
     namespace: ${kubernetes_namespace}
-    secret-volumes:
-      public-key-volume:
-        secret-name: kiunzi-public-key-secret
   jib:
     base-jvm-image: ${jib_base_jvm_image}
     base-registry-username: ${jib_base_registry_username}
@@ -56,8 +33,6 @@ quarkus:
         generation: drop-and-create
     http:
       port: 8080
-    smallrye-jwt:
-      enabled: true
 
 # production profile configuration
 "%prod":
@@ -65,14 +40,17 @@ quarkus:
     jwt:
       verify:
         publickey:
-          location: /keyfiles/publicKey.pem
-        issuer: ${TOKEN_ISSUER}
+          location: http:key/service-api/pem
+        issuer: ${token-issuer}
   quarkus:
     datasource:
-      db-kind: ${DATABASE_KIND}
-      username: ${DATABASE_USERNAME}
-      password: ${DATABASE_PASSWORD}
+      db-kind: ${database-kind}
+      username: ${database-username}
+      password: ${database-password}
       reactive:
-        url: ${DATABASE_URL}
+        url: ${database-url}
     http:
       port: 8080
+    kubernetes-config:
+      ~: kiunzi-secrets
+      enabled: true
