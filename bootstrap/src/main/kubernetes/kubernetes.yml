@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: movies
+spec:
+  hosts:
+  - movies.default.svc.cluster.local
+  http:
+  - name: movies-route
+    route:
+    - destination:
+        host: movies.default.svc.cluster.local
+        port:
+          number: 80
