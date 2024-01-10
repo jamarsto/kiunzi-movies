@@ -26,40 +26,40 @@ import uk.co.jasonmarston.movies.entity.Movie;
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
 @Builder
 public class MovieData {
-	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
-	private UUID id;
-	@Version
-	private Long version;
-	private String title;
-	@Temporal(TemporalType.DATE)
-	@Column(name = "releasedOn")
-	private Date released;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+    @Version
+    private Long version;
+    private String title;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "releasedOn")
+    private Date released;
 
-	public static MovieData buildMovieDataFrom(final Movie movie) {
-		return MovieData
-			.builder()
-			.id(movie.getId())
-			.version(movie.getVersion())
-			.title(movie.getTitle())
-			.released(movie.getRelease())
-			.build();
-	}
+    public static MovieData buildMovieDataFrom(final Movie movie) {
+        return MovieData
+            .builder()
+            .id(movie.getId())
+            .version(movie.getVersion())
+            .title(movie.getTitle())
+            .released(movie.getRelease())
+            .build();
+    }
 
-	public static Movie buildMovieFrom(final MovieData movieData) {
-		return Movie
-			.builder()
-			.id(movieData.getId())
-			.version(movieData.getVersion())
-			.title(movieData.getTitle())
-			.release(movieData.getReleased())
-			.build();
-	}
+    public static Movie buildMovieFrom(final MovieData movieData) {
+        return Movie
+            .builder()
+            .id(movieData.getId())
+            .version(movieData.getVersion())
+            .title(movieData.getTitle())
+            .release(movieData.getReleased())
+            .build();
+    }
 
-	public MovieData from(final MovieData movieData) {
-		this.setId(movieData.getId());
-		this.setTitle(movieData.getTitle());
-		this.setReleased(movieData.getReleased());
-		return this;
-	}
+    public MovieData from(final MovieData movieData) {
+        this.setId(movieData.getId());
+        this.setTitle(movieData.getTitle());
+        this.setReleased(movieData.getReleased());
+        return this;
+    }
 }

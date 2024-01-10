@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-//@RegisterForReflection
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class MessageBean {
-	private String message;
+    private String message;
 }

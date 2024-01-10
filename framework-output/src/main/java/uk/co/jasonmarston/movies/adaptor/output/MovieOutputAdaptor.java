@@ -12,39 +12,36 @@ import uk.co.jasonmarston.movies.output.port.MovieOutputPort;
 
 @ApplicationScoped
 public class MovieOutputAdaptor implements MovieOutputPort {
-	@Inject
-	private MovieRepository movieRepository;
+    @Inject
+    private MovieRepository movieRepository;
 
-	@Override
-	public Uni<Movie> createMovie(final Movie movie) {
-		return 	movieRepository
-			.createMovie(MovieData.buildMovieDataFrom(movie))
-			.onItem()
-			.transform(MovieData::buildMovieFrom
-			);
-	}
+    @Override
+    public Uni<Movie> createMovie(final Movie movie) {
+        return movieRepository
+            .createMovie(MovieData.buildMovieDataFrom(movie))
+            .onItem()
+            .transform(MovieData::buildMovieFrom);
+    }
 
-	@Override
-	public Uni<Movie> readMovie(final UUID id) {
-		return movieRepository
-			.readMovie(id)
-			.onItem()
-			.transform(MovieData::buildMovieFrom
-			);
-	}
+    @Override
+    public Uni<Movie> readMovie(final UUID id) {
+        return movieRepository
+            .readMovie(id)
+            .onItem()
+            .transform(MovieData::buildMovieFrom);
+    }
 
-	@Override
-	public Uni<Movie> updateMovie(final Movie movie) {
-		return movieRepository
-			.updateMovie(MovieData.buildMovieDataFrom(movie))
-			.onItem()
-			.transform(MovieData::buildMovieFrom
-			);
-	}
+    @Override
+    public Uni<Movie> updateMovie(final Movie movie) {
+        return movieRepository
+            .updateMovie(MovieData.buildMovieDataFrom(movie))
+            .onItem()
+            .transform(MovieData::buildMovieFrom);
+    }
 
-	@Override
-	public Uni<Boolean> deleteMovie(UUID id) {
-		return 	movieRepository
-			.deleteMovie(id);
-	}
+    @Override
+    public Uni<Boolean> deleteMovie(UUID id) {
+        return movieRepository
+            .deleteMovie(id);
+    }
 }

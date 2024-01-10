@@ -14,22 +14,14 @@ import uk.co.jasonmarston.movies.entity.Movie;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class CreateMovieBean {
-	private String title;
-	private Date release;
+    private String title;
+    private Date release;
 
-	public static CreateMovieBean buildCreateMovieBeanFrom(final Movie movie) {
-		return CreateMovieBean
-			.builder()
-			.title(movie.getTitle())
-			.release(movie.getRelease())
-			.build();
-	}
-
-	public static Movie buildMovieFrom(final CreateMovieBean movieData) {
-		return Movie
-			.builder()
-			.title(movieData.getTitle())
-			.release(movieData.getRelease())
-			.build();
-	}
+    public static Movie buildMovieFrom(final CreateMovieBean movieData) {
+        return Movie
+            .builder()
+            .title(movieData.getTitle())
+            .release(movieData.getRelease())
+            .build();
+    }
 }

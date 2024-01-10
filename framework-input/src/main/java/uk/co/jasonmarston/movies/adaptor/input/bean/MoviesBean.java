@@ -13,5 +13,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class MoviesBean {
-	private List<MovieBean> movies;
+    private List<MovieBean> movies;
 }

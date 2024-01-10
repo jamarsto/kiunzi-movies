@@ -9,8 +9,8 @@ import lombok.Data;
 @Data
 @Builder
 public class Movie {
-	private UUID id;
-	private Long version;
-	private String title;
-	private Date release;
+    private UUID id;
+    private Long version;
+    private String title;
+    private Date release;
 }
