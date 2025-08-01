@@ -1,8 +1,9 @@
 pluginManagement {
     // repository for downloading plugins and their dependencies
     repositories {
+        //gradlePluginPortal()
         maven {
-            url 'https://pkgs.dev.azure.com/jamarston/_packaging/GradlePlugins/maven/v1'
+            url 'https://pkgs.dev.azure.com/jamarston/762ffd9e-ca64-466d-84e9-7a0e42e5d89a/_packaging/Artifacts/maven/v1'
             name 'GradlePlugins'
             credentials {
                 username "jamarston"
@@ -13,15 +14,15 @@ pluginManagement {
 }
 
 plugins {
-    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     // repository for downloading dependencies
     repositories {
+        //mavenCentral()
         maven {
-            url 'https://pkgs.dev.azure.com/jamarston/_packaging/MavenCentral/maven/v1'
+            url 'https://pkgs.dev.azure.com/jamarston/762ffd9e-ca64-466d-84e9-7a0e42e5d89a/_packaging/Artifacts/maven/v1'
             name 'MavenCentral'
             credentials {
                 username 'jamarston'

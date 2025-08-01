@@ -1,5 +1,6 @@
 package uk.co.jasonmarston.movies.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
@@ -12,5 +13,5 @@ public class Movie {
     private UUID id;
     private Long version;
     private String title;
-    private Date release;
+    private LocalDate release;
 }

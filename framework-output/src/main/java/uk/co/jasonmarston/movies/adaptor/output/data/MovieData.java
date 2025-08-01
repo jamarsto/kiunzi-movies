@@ -1,5 +1,6 @@
 package uk.co.jasonmarston.movies.adaptor.output.data;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
@@ -32,9 +33,8 @@ public class MovieData {
     @Version
     private Long version;
     private String title;
-    @Temporal(TemporalType.DATE)
     @Column(name = "releasedOn")
-    private Date released;
+    private LocalDate released;
 
     public static MovieData buildMovieDataFrom(final Movie movie) {
         return MovieData

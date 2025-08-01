@@ -13,20 +13,23 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
+
 import uk.co.jasonmarston.movies.adaptor.input.bean.CreateMovieBean;
 import uk.co.jasonmarston.movies.adaptor.input.bean.MovieBean;
 import uk.co.jasonmarston.movies.adaptor.input.bean.UpdateMovieBean;
 import uk.co.jasonmarston.movies.usecase.MovieUseCase;
 
+import static jakarta.ws.rs.core.MediaType.APPLICATION_JSON;
+
 @ApplicationScoped
 @Path("/service-api")
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
+@Consumes(APPLICATION_JSON)
+@Produces(APPLICATION_JSON)
 @RolesAllowed({"user", "service"})
 public class ServiceMovieInputAdaptor {
+    private static final Status CREATED = Status.CREATED;
     private static final Response NOT_FOUND = Response
         .status(Status.NOT_FOUND)
         .build();
@@ -49,7 +52,7 @@ public class ServiceMovieInputAdaptor {
             .onItem()
             .transform(movieBean -> Response
                 .ok(movieBean)
-                .status(Status.CREATED)
+                .status(CREATED)
                 .build()
             )
             .onFailure()

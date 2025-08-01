@@ -1,6 +1,6 @@
 package uk.co.jasonmarston.movies.adaptor.input.bean;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 import lombok.AccessLevel;
@@ -18,7 +18,7 @@ public class UpdateMovieBean {
     private UUID id;
     private Long version;
     private String title;
-    private Date release;
+    private LocalDate release;
 
     public static Movie buildMovieFrom(final UpdateMovieBean movieData) {
         return Movie

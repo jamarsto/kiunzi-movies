@@ -1,20 +1,20 @@
 # Build time configuration & dev services configuration
 quarkus:
   container-image:
-    group: ${docker_group}
-    name: ${docker_name}
+    group: 'jasonmarstoncouk'
+    name: 'movies'
     password: ${DOCKER_HUB_TOKEN}
-    push: ${docker_push}
-    registry: ${docker_registry}
-    tag: ${docker_tag}
-    username: ${docker_username}
+    push: 'true'
+    registry: 'registry.hub.docker.com'
+    tag: 'latest'
+    username: 'jasonmarstoncouk'
   kubernetes:
-    deploy: ${kubernetes_deploy}
-    name: ${kubernetes_name}
-    namespace: ${kubernetes_namespace}
+    deploy: 'true'
+    name: 'movies'
+    namespace: 'default'
   jib:
-    base-jvm-image: ${jib_base_jvm_image}
-    base-registry-username: ${jib_base_registry_username}
+    base-jvm-image: 'eclipse-temurin:20-jdk-alpine'
+    base-registry-username: 'jasonmarstoncouk'
     base-registry-password: ${DOCKER_HUB_TOKEN}
 
 # development profile configuration

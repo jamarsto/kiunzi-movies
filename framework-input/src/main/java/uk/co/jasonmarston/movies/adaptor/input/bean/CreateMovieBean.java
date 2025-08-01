@@ -1,6 +1,6 @@
 package uk.co.jasonmarston.movies.adaptor.input.bean;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import uk.co.jasonmarston.movies.entity.Movie;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class CreateMovieBean {
     private String title;
-    private Date release;
+    private LocalDate release;
 
     public static Movie buildMovieFrom(final CreateMovieBean movieData) {
         return Movie

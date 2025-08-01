@@ -1,3 +1,4 @@
+//file:noinspection GroovyAssignabilityCheck
 plugins {
     id 'java-library'
     id 'io.freefair.lombok'
@@ -24,6 +25,7 @@ publishing {
     }
 }
 
+//noinspection GroovyUnusedAssignment
 archivesBaseName = 'movies-domain'
 group = 'uk.co.jasonmarston.kiunzi'
 version = '0.0.1-SNAPSHOT'
