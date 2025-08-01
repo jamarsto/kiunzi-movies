@@ -1,9 +1,9 @@
 package uk.co.jasonmarston.movies.usecase;
 
-import java.util.UUID;
-
 import io.smallrye.mutiny.Uni;
 import uk.co.jasonmarston.movies.entity.Movie;
+
+import java.util.UUID;
 
 public interface MovieUseCase {
     Uni<Movie> createMovie(final Movie movie);

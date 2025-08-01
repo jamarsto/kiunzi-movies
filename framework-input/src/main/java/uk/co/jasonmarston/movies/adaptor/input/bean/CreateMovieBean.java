@@ -1,12 +1,12 @@
 package uk.co.jasonmarston.movies.adaptor.input.bean;
 
-import java.time.LocalDate;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import uk.co.jasonmarston.movies.entity.Movie;
+
+import java.time.LocalDate;
 
 import static lombok.AccessLevel.PUBLIC;
 

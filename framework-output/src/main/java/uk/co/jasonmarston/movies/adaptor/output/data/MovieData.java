@@ -1,19 +1,11 @@
 package uk.co.jasonmarston.movies.adaptor.output.data;
 
+import jakarta.persistence.*;
+import lombok.*;
+import uk.co.jasonmarston.movies.entity.Movie;
+
 import java.time.LocalDate;
 import java.util.UUID;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Version;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import uk.co.jasonmarston.movies.entity.Movie;
 
 import static jakarta.persistence.GenerationType.UUID;
 import static lombok.AccessLevel.PACKAGE;

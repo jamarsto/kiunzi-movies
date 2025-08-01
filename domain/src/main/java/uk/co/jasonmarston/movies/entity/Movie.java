@@ -1,10 +1,10 @@
 package uk.co.jasonmarston.movies.entity;
 
-import java.time.LocalDate;
-import java.util.UUID;
-
 import lombok.Builder;
 import lombok.Data;
+
+import java.time.LocalDate;
+import java.util.UUID;
 
 @Data
 @Builder

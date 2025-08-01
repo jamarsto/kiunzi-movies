@@ -1,25 +1,18 @@
 package uk.co.jasonmarston.movies.adaptor.input;
 
-import java.util.UUID;
-
 import io.smallrye.mutiny.Uni;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.DELETE;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.PUT;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
-
 import uk.co.jasonmarston.movies.adaptor.input.bean.CreateMovieBean;
 import uk.co.jasonmarston.movies.adaptor.input.bean.MovieBean;
 import uk.co.jasonmarston.movies.adaptor.input.bean.UpdateMovieBean;
 import uk.co.jasonmarston.movies.usecase.MovieUseCase;
+
+import java.util.UUID;
 
 import static jakarta.ws.rs.core.MediaType.APPLICATION_JSON;
 

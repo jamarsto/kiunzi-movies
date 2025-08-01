@@ -1,9 +1,9 @@
 package uk.co.jasonmarston.movies.adaptor.output.repository;
 
-import java.util.UUID;
-
 import io.smallrye.mutiny.Uni;
 import uk.co.jasonmarston.movies.adaptor.output.data.MovieData;
+
+import java.util.UUID;
 
 public interface MovieRepository {
     Uni<MovieData> createMovie(MovieData movieData);
