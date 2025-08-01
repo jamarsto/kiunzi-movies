@@ -6,10 +6,8 @@ import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Version;
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,15 +15,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import uk.co.jasonmarston.movies.entity.Movie;
 
+import static jakarta.persistence.GenerationType.UUID;
+import static lombok.AccessLevel.PACKAGE;
+import static lombok.AccessLevel.PRIVATE;
+
 @Entity
 @Getter
-@Setter(AccessLevel.PRIVATE)
-@AllArgsConstructor(access = AccessLevel.PACKAGE)
-@NoArgsConstructor(access = AccessLevel.PACKAGE)
+@Setter(PRIVATE)
+@AllArgsConstructor(access = PACKAGE)
+@NoArgsConstructor(access = PACKAGE)
 @Builder
 public class MovieData {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = UUID)
     private UUID id;
     @Version
     private Long version;

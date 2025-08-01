@@ -40,7 +40,7 @@ public class MovieOutputAdaptor implements MovieOutputPort {
     }
 
     @Override
-    public Uni<Boolean> deleteMovie(UUID id) {
+    public Uni<Boolean> deleteMovie(final UUID id) {
         return movieRepository
             .deleteMovie(id);
     }
