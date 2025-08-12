@@ -1,4 +1,4 @@
-package uk.co.jasonmarston.movies.entity;
+package uk.co.jasonmarston.movies.domain.entity;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package uk.co.jasonmarston.movies.adaptor.output.repository;
+package uk.co.jasonmarston.movies.output.repository;
 
 import io.smallrye.mutiny.Uni;
-import uk.co.jasonmarston.movies.adaptor.output.data.MovieData;
+import uk.co.jasonmarston.movies.output.data.MovieData;
 
 import java.util.UUID;
 

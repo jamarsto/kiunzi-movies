@@ -1,4 +1,4 @@
-package uk.co.jasonmarston.movies.adaptor.input;
+package uk.co.jasonmarston.movies.input.adaptor;
 
 import io.smallrye.mutiny.Uni;
 import jakarta.annotation.security.RolesAllowed;
@@ -7,21 +7,21 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
-import uk.co.jasonmarston.movies.adaptor.input.bean.CreateMovieBean;
-import uk.co.jasonmarston.movies.adaptor.input.bean.MovieBean;
-import uk.co.jasonmarston.movies.adaptor.input.bean.UpdateMovieBean;
-import uk.co.jasonmarston.movies.usecase.MovieUseCase;
+import uk.co.jasonmarston.movies.input.bean.CreateMovieBean;
+import uk.co.jasonmarston.movies.input.bean.MovieBean;
+import uk.co.jasonmarston.movies.input.bean.UpdateMovieBean;
+import uk.co.jasonmarston.movies.input.usecase.MovieUseCase;
 
 import java.util.UUID;
 
 import static jakarta.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @ApplicationScoped
-@Path("/service-api")
+@Path("/client-api")
 @Consumes(APPLICATION_JSON)
 @Produces(APPLICATION_JSON)
-@RolesAllowed({"user", "service"})
-public class ServiceMovieInputAdaptor {
+@RolesAllowed("user")
+public class ClientMovieInputAdaptor {
     private static final Status CREATED = Status.CREATED;
     private static final Response NOT_FOUND = Response
         .status(Status.NOT_FOUND)
@@ -90,7 +90,9 @@ public class ServiceMovieInputAdaptor {
 
     @DELETE
     @Path("/movie/{id}")
-    public Uni<Response> deleteMovie(final UUID id) {
+    public Uni<Response> deleteMovie(
+        final UUID id
+    ) {
         return movieUseCase
             .deleteMovie(id)
             .onItem()

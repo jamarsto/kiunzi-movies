@@ -1,11 +1,11 @@
-package uk.co.jasonmarston.movies.adaptor.output;
+package uk.co.jasonmarston.movies.output.adaptor;
 
 import io.smallrye.mutiny.Uni;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import uk.co.jasonmarston.movies.adaptor.output.data.MovieData;
-import uk.co.jasonmarston.movies.adaptor.output.repository.MovieRepository;
-import uk.co.jasonmarston.movies.entity.Movie;
+import uk.co.jasonmarston.movies.output.data.MovieData;
+import uk.co.jasonmarston.movies.output.repository.MovieRepository;
+import uk.co.jasonmarston.movies.domain.entity.Movie;
 import uk.co.jasonmarston.movies.output.port.MovieOutputPort;
 
 import java.util.UUID;

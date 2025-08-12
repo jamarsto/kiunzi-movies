@@ -1,4 +1,4 @@
-package uk.co.jasonmarston.movies.adaptor.input.bean;
+package uk.co.jasonmarston.movies.input.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

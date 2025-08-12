@@ -1,8 +1,8 @@
-package uk.co.jasonmarston.movies.adaptor.output.data;
+package uk.co.jasonmarston.movies.output.data;
 
 import jakarta.persistence.*;
 import lombok.*;
-import uk.co.jasonmarston.movies.entity.Movie;
+import uk.co.jasonmarston.movies.domain.entity.Movie;
 
 import java.time.LocalDate;
 import java.util.UUID;

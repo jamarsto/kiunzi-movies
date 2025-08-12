@@ -1,7 +1,7 @@
 package uk.co.jasonmarston.movies.output.port;
 
 import io.smallrye.mutiny.Uni;
-import uk.co.jasonmarston.movies.entity.Movie;
+import uk.co.jasonmarston.movies.domain.entity.Movie;
 
 import java.util.UUID;
 

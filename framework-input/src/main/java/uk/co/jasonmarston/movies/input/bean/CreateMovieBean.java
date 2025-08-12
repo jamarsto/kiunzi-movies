@@ -1,10 +1,10 @@
-package uk.co.jasonmarston.movies.adaptor.input.bean;
+package uk.co.jasonmarston.movies.input.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import uk.co.jasonmarston.movies.entity.Movie;
+import uk.co.jasonmarston.movies.domain.entity.Movie;
 
 import java.time.LocalDate;
 

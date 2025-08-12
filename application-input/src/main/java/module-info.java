@@ -5,5 +5,5 @@ module application.input {
     requires jakarta.cdi;
     requires transitive io.smallrye.mutiny;
 
-    exports uk.co.jasonmarston.movies.usecase;
+    exports uk.co.jasonmarston.movies.input.usecase;
 }
