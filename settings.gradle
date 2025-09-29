@@ -18,7 +18,7 @@ plugins {
 }
 
 dependencyResolutionManagement {
-    // repository for downloading dependencies
+    // repository for downloading dependencies.
     repositories {
         //mavenCentral()
         maven {
