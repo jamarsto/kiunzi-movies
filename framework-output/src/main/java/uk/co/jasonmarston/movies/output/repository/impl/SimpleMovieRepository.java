@@ -40,7 +40,7 @@ public class SimpleMovieRepository implements
                 .ifNotNull()
                 .transform(item -> {
                     if(item.getVersion().equals(movieData.getVersion())) {
-                        return item.from(movieData);
+                        return movieData;
                     }
                     return null;
                 })

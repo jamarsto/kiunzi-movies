@@ -57,3 +57,13 @@ java {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+// Ensure the module name is correctly set for the compilation process
+tasks.named('compileJava', JavaCompile) {
+    doFirst {
+        // If this option is available in your Gradle/JDK version, it forces the module name.
+        options.compilerArgs.addAll([
+                '--module-path', classpath.asPath
+        ])
+    }
+}

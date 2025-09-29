@@ -5,4 +5,5 @@ module framework.input {
     requires jakarta.cdi;
     requires jakarta.ws.rs;
     requires io.smallrye.mutiny;
-}
+    requires modelmapper;
+ }

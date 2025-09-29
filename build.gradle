@@ -2,7 +2,6 @@ plugins {
     id 'io.quarkus' version '3.24.5' apply false
     id 'io.freefair.lombok' version '8.14' apply false
     id 'org.kordamp.gradle.jandex' version '2.2.0' apply false
-    id 'org.gradlex.extra-java-module-info' version '1.13' apply false
 }
 
 ext {

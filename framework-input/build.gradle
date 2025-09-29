@@ -36,9 +36,10 @@ dependencies {
     //noinspection VulnerableLibrariesLocal
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
 
-    implementation project(':application-input')
-
     implementation 'io.quarkus:quarkus-rest-jackson-common'
+
+    implementation 'org.modelmapper:modelmapper:3.2.4'
+    implementation project(':application-input')
 
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
@@ -55,4 +56,14 @@ java {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+// Ensure the module name is correctly set for the compilation process
+tasks.named('compileJava', JavaCompile) {
+    doFirst {
+        // If this option is available in your Gradle/JDK version, it forces the module name.
+        options.compilerArgs.addAll([
+                '--module-path', classpath.asPath
+        ])
+    }
 }
