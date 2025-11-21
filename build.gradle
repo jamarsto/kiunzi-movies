@@ -1,12 +1,12 @@
 plugins {
-    id 'io.quarkus' version '3.24.5' apply false
-    id 'io.freefair.lombok' version '8.14' apply false
+    id 'io.quarkus' version '3.29.3' apply false
+    id 'io.freefair.lombok' version '9.1.0' apply false
     id 'org.kordamp.gradle.jandex' version '2.2.0' apply false
 }
 
 ext {
     quarkusPlatformGroupId = 'io.quarkus.platform'
     quarkusPlatformArtifactId = 'quarkus-bom'
-    quarkusPlatformVersion = '3.24.5'
+    quarkusPlatformVersion = '3.29.3'
     junitVersion = '5.13.4'
 }

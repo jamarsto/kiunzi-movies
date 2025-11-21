@@ -24,8 +24,9 @@ publishing {
     }
 }
 
-//noinspection GroovyUnusedAssignment
-archivesBaseName = 'movies'
+base {
+    archivesName = 'movies'
+}
 group = 'uk.co.jasonmarston.kiunzi'
 version = '0.0.1-SNAPSHOT'
 
@@ -58,7 +59,7 @@ dependencies {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(20)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 

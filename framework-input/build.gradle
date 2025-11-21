@@ -27,8 +27,9 @@ publishing {
     }
 }
 
-//noinspection GroovyUnusedAssignment
-archivesBaseName = 'movies-framework-input'
+base {
+    archivesName = 'movies-framework-input'
+}
 group = 'uk.co.jasonmarston.kiunzi'
 version = '0.0.1-SNAPSHOT'
 
@@ -50,7 +51,7 @@ dependencies {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(20)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 

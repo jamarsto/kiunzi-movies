@@ -1,3 +1,4 @@
+//file:noinspection GroovyAssignabilityCheck
 plugins {
     id 'java-library'
     id 'io.freefair.lombok'
@@ -24,9 +25,11 @@ publishing {
     }
 }
 
-archivesBaseName = 'movies-lib'
+base {
+    archivesName = 'movies-lib'
+}
 group = 'uk.co.jasonmarston.kiunzi'
-version = 'latest'
+version = '0.0.1-SNAPSHOT'
 
 dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
@@ -35,7 +38,7 @@ dependencies {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(20)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 

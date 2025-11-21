@@ -9,11 +9,12 @@ quarkus:
     tag: 'latest'
     username: 'jasonmarstoncouk'
   kubernetes:
+    deployment-target: 'kubernetes'
     deploy: 'true'
     name: 'movies'
     namespace: 'default'
   jib:
-    base-jvm-image: 'eclipse-temurin:20-jdk-alpine'
+    base-jvm-image: 'eclipse-temurin:25-jdk-alpine'
     base-registry-username: 'jasonmarstoncouk'
     base-registry-password: ${DOCKER_HUB_TOKEN}
 
